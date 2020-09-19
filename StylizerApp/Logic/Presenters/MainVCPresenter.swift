@@ -45,21 +45,33 @@ public class MainVCPresenter: NSObject{
         self.viewController?.transformButton?.addTarget(self, action: #selector(MainVCPresenter.didTapTransform), for: .touchUpInside)
     }
     
+    private func selectImageWithPicker(completion: @escaping (UIImage) -> Void){
+        if let vc = self.viewController{
+            ImagePickerFactory().pickImage(vc) { (image) in
+                completion(image)
+            }
+        }
+    }
+    
     @objc private func didTapSubjectImage(){
-        
+        self.selectImageWithPicker { [weak self] (image) in
+            self?.viewController?.subjectImage?.image = image
+        }
     }
     @objc private func didTapStyleImage(){
-        
+        self.selectImageWithPicker { [weak self] (image) in
+            self?.viewController?.styleImage?.image = image
+        }
     }
     @objc private func didTapTransform(){
         guard let styleIMG = viewController?.styleImage?.image,let originalIMG = viewController?.subjectImage?.image else {return}
-        iterator.permormTransormationRequest(originalImage: styleIMG, styleImage: originalIMG) { (data, err) in
+        iterator.permormTransormationRequest(originalImage: styleIMG, styleImage: originalIMG) { [weak self] (data, err)  in
             
         }
     }
     
     public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "image" && viewController?.styleImage?.image != nil && viewController?.subjectImage?.image != nil{
+        if keyPath == Constants.stringImage && viewController?.styleImage?.image != nil && viewController?.subjectImage?.image != nil{
             viewController?.transformButton?.isEnabled = true
         }else{
             viewController?.transformButton?.isEnabled = false
