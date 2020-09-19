@@ -40,8 +40,8 @@ public class MainVCPresenter: NSObject{
     }
     
     private func addTargets(){
-        self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapSubjectImage)))
-        self.viewController?.styleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapStyleImage)))
+        self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
+        self.viewController?.styleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
         self.viewController?.transformButton?.addTarget(self, action: #selector(MainVCPresenter.didTapTransform), for: .touchUpInside)
     }
     
@@ -55,12 +55,16 @@ public class MainVCPresenter: NSObject{
     
     @objc private func didTapSubjectImage(){
         self.selectImageWithPicker { [weak self] (image) in
-            self?.viewController?.subjectImage?.image = image
+            DispatchQueue.main.async {
+                 self?.viewController?.subjectImage?.image = image
+            }
         }
     }
     @objc private func didTapStyleImage(){
         self.selectImageWithPicker { [weak self] (image) in
-            self?.viewController?.styleImage?.image = image
+            DispatchQueue.main.async {
+                self?.viewController?.styleImage?.image = image
+            }
         }
     }
     @objc private func didTapTransform(){
