@@ -46,7 +46,7 @@
 		3240216725121AE20033A583 /* StylizerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StylizerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3240216B25121AE20033A583 /* StylizerAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylizerAppTests.swift; sourceTree = "<group>"; };
 		3240216D25121AE20033A583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3240217F251224320033A583 /* MainVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCPresenter.swift; sourceTree = "<group>"; };
+		3240217F251224320033A583 /* MainVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCPresenter.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		3240218C2512292D0033A583 /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
 		326B39482514ED760065898B /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		326B394A2514EDBD0065898B /* NetworkConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionService.swift; sourceTree = "<group>"; };

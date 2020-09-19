@@ -10,11 +10,15 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var originalImageView: UIImageView?
+    @IBOutlet weak var styleImageView: UIImageView?
+    
     var presenter: MainVCPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initPresenter()
+        
     }
     
     private func initPresenter(){
@@ -24,12 +28,17 @@ class MainViewController: UIViewController {
 
 }
 extension MainViewController: MainVCPresenterViewController{
-    var styleImage: UIImageView? {
+    
+    var transformButton: UIButton? {
         return nil
     }
     
+    var styleImage: UIImageView? {
+        return styleImageView
+    }
+    
     var subjectImage: UIImageView? {
-        return nil
+        return originalImageView
     }
 }
 
