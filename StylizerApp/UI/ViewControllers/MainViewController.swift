@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var originalImageView: UIImageView?
     @IBOutlet weak var styleImageView: UIImageView?
+    @IBOutlet weak var buttonTransform: UIButton?
     
     var presenter: MainVCPresenter?
     
@@ -30,7 +31,7 @@ class MainViewController: UIViewController {
 extension MainViewController: MainVCPresenterViewController{
     
     var transformButton: UIButton? {
-        return nil
+        return buttonTransform
     }
     
     var styleImage: UIImageView? {
