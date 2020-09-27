@@ -13,6 +13,8 @@ public protocol MainVCPresenterViewController where Self: UIViewController {
     var styleImage : UIImageView? {get}
     var subjectImage : UIImageView? {get}
     var transformButton: UIButton? {get}
+    var placeholderForOriginalImage: UIImageView?{get}
+    var placeholderForStyleImage:UIImageView?{get}
 }
 
 public class MainVCPresenter: NSObject{
@@ -43,6 +45,9 @@ public class MainVCPresenter: NSObject{
         self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
         self.viewController?.styleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
         self.viewController?.transformButton?.addTarget(self, action: #selector(MainVCPresenter.didTapTransform), for: .touchUpInside)
+        self.viewController?.placeholderForOriginalImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
+        self.viewController?.placeholderForStyleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
+        
     }
     
     private func selectImageWithPicker(completion: @escaping (UIImage) -> Void){
@@ -70,7 +75,11 @@ public class MainVCPresenter: NSObject{
     @objc private func didTapTransform(){
         guard let styleIMG = viewController?.styleImage?.image,let originalIMG = viewController?.subjectImage?.image else {return}
         iterator.permormTransormationRequest(originalImage: styleIMG, styleImage: originalIMG) { [weak self] (data, err)  in
-            
+            if let img = ImageManager.shared.createImageWithData(data: data){
+                ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
+            }else{
+                ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: UIImage(named: "icon_app_title"))
+            }
         }
     }
     

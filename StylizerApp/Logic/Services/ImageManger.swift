@@ -17,8 +17,11 @@ public class ImageManager{
     
     public func createDataWithImages(originalImage: UIImage, styleImage: UIImage) -> Data?{
         
-        let originalImageData = originalImage.pngData()
-        let styleImageData = styleImage.pngData()
+        
+        let originalImageData = originalImage.pngData()?.base64EncodedString()
+        let styleImageData = styleImage.pngData()?.base64EncodedString()
+    //    let originalImageData = UIImage(named: "orig")!.pngData()?.base64EncodedString()
+     //   let styleImageData = UIImage(named: "style")!.pngData()?.base64EncodedString()
         
         let dict = [Constants.keyOriginalImage : originalImageData, Constants.keyStyleImage: styleImageData]
         if let data = try? JSONSerialization.data(withJSONObject: dict, options: []){
@@ -26,5 +29,15 @@ public class ImageManager{
         }else{
             return nil
         }
+    }
+    
+    public func createImageWithData(data: Data?) -> UIImage?{
+        guard let data = data else {
+            return nil
+        }
+        if let encodedString = String(bytes: data, encoding: .utf8), let imgData =  Data(base64Encoded: encodedString, options: .ignoreUnknownCharacters), let image = UIImage(data: imgData){
+            return image
+        }
+        return nil
     }
 }

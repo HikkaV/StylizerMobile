@@ -17,9 +17,13 @@
 		3240216C25121AE20033A583 /* StylizerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240216B25121AE20033A583 /* StylizerAppTests.swift */; };
 		32402180251224320033A583 /* MainVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240217F251224320033A583 /* MainVCPresenter.swift */; };
 		3240218D2512292D0033A583 /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240218C2512292D0033A583 /* Iterator.swift */; };
+		3265CB4125209C7100636672 /* ImageDetailedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265CB4025209C7100636672 /* ImageDetailedFactory.swift */; };
 		326B39492514ED760065898B /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B39482514ED760065898B /* RequestService.swift */; };
 		326B394B2514EDBD0065898B /* NetworkConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B394A2514EDBD0065898B /* NetworkConnectionService.swift */; };
 		326B394E2514EEBA0065898B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B394D2514EEBA0065898B /* Constants.swift */; };
+		32882D90251FC1C200615EC6 /* ImageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32882D8F251FC1C200615EC6 /* ImageDetailsController.swift */; };
+		32882D94251FC42C00615EC6 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32882D93251FC42C00615EC6 /* ImageDetailsPresenter.swift */; };
+		32882D99251FC9AE00615EC6 /* GradientTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32882D98251FC9AE00615EC6 /* GradientTool.swift */; };
 		32F42D632514F9DB0087EC14 /* ImageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D622514F9DB0087EC14 /* ImageManger.swift */; };
 		32F42D6C2516882E0087EC14 /* ImagePickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */; };
 		32F42D6F25168E9B0087EC14 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D6E25168E9B0087EC14 /* NavigationController.swift */; };
@@ -50,9 +54,13 @@
 		3240216D25121AE20033A583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3240217F251224320033A583 /* MainVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCPresenter.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		3240218C2512292D0033A583 /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
+		3265CB4025209C7100636672 /* ImageDetailedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailedFactory.swift; sourceTree = "<group>"; };
 		326B39482514ED760065898B /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		326B394A2514EDBD0065898B /* NetworkConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnectionService.swift; sourceTree = "<group>"; };
 		326B394D2514EEBA0065898B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		32882D8F251FC1C200615EC6 /* ImageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsController.swift; sourceTree = "<group>"; };
+		32882D93251FC42C00615EC6 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
+		32882D98251FC9AE00615EC6 /* GradientTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTool.swift; sourceTree = "<group>"; };
 		32F42D622514F9DB0087EC14 /* ImageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManger.swift; sourceTree = "<group>"; };
 		32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerFactory.swift; sourceTree = "<group>"; };
 		32F42D6E25168E9B0087EC14 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -117,6 +125,7 @@
 		324021762512237E0033A583 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				32882D97251FC96900615EC6 /* Supported */,
 				32F42D6A251688070087EC14 /* Factory */,
 				326B39472514ECE80065898B /* Storyboard */,
 				32402179251223BC0033A583 /* ViewControllers */,
@@ -151,6 +160,7 @@
 			children = (
 				32F42D6D25168E840087EC14 /* common */,
 				3240215525121ADF0033A583 /* MainViewController.swift */,
+				32882D8F251FC1C200615EC6 /* ImageDetailsController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3240217F251224320033A583 /* MainVCPresenter.swift */,
+				32882D93251FC42C00615EC6 /* ImageDetailsPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -198,10 +209,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		32882D97251FC96900615EC6 /* Supported */ = {
+			isa = PBXGroup;
+			children = (
+				32882D98251FC9AE00615EC6 /* GradientTool.swift */,
+			);
+			path = Supported;
+			sourceTree = "<group>";
+		};
 		32F42D6A251688070087EC14 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
 				32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */,
+				3265CB4025209C7100636672 /* ImageDetailedFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -317,13 +337,17 @@
 			files = (
 				326B39492514ED760065898B /* RequestService.swift in Sources */,
 				32F42D6F25168E9B0087EC14 /* NavigationController.swift in Sources */,
+				32882D94251FC42C00615EC6 /* ImageDetailsPresenter.swift in Sources */,
 				3240218D2512292D0033A583 /* Iterator.swift in Sources */,
 				326B394B2514EDBD0065898B /* NetworkConnectionService.swift in Sources */,
 				32F42D6C2516882E0087EC14 /* ImagePickerFactory.swift in Sources */,
 				32402180251224320033A583 /* MainVCPresenter.swift in Sources */,
 				3240215625121ADF0033A583 /* MainViewController.swift in Sources */,
+				32882D90251FC1C200615EC6 /* ImageDetailsController.swift in Sources */,
 				3240215225121ADF0033A583 /* AppDelegate.swift in Sources */,
+				32882D99251FC9AE00615EC6 /* GradientTool.swift in Sources */,
 				3240215425121ADF0033A583 /* SceneDelegate.swift in Sources */,
+				3265CB4125209C7100636672 /* ImageDetailedFactory.swift in Sources */,
 				3240215C25121ADF0033A583 /* StylizerApp.xcdatamodeld in Sources */,
 				326B394E2514EEBA0065898B /* Constants.swift in Sources */,
 				32F42D632514F9DB0087EC14 /* ImageManger.swift in Sources */,

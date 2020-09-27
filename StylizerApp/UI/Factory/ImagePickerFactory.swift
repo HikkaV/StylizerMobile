@@ -50,6 +50,7 @@ public class ImagePickerFactory: NSObject, UINavigationControllerDelegate{
             self.viewController?.present(picker, animated: true, completion: nil)
         } else {
             let alertController = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.viewController?.present(alertController, animated: true)
         }
     }

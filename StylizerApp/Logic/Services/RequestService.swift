@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+import UIKit
 private enum errors: Error{
     case noURLSet
     case networkError
@@ -58,15 +58,16 @@ public class RequestService {
     
     private func startDataTask(request: URLRequest, completion: Completion?){
         let task = URLSession.shared.dataTask(with: request){ data, responce, error in
-            guard error != nil, NetworkConnectionService.isConnectedToNetwork()  else {
-                completion?(nil, errors.networkError)
-                return
-            }
+//            guard error != nil, NetworkConnectionService.isConnectedToNetwork()  else {
+//                completion?(nil, errors.networkError)
+//                return
+//            }
             if let responce = responce as? HTTPURLResponse{
                 let goodResponceStatus = (200...299)
                 if !(goodResponceStatus.contains(responce.statusCode)) {
                     completion?(nil, errors.badResponce)
                 }
+                print(responce)
             }
             if let data = data {
                 completion?(data, nil)
@@ -81,6 +82,7 @@ public class RequestService {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.httpBody = data
+        request.httpMethod = "POST"
         return request
     }
 }
