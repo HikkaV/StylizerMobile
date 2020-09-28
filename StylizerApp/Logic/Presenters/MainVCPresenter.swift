@@ -34,12 +34,8 @@ public class MainVCPresenter: NSObject{
     
     private func connectToViewController(){
         addTargets()
-        addObservers()
     }
     
-    private func addObservers(){
-        [self.viewController?.subjectImage, self.viewController?.styleImage].forEach({$0?.addObserver(self, forKeyPath: "image", options: .new, context: nil)})
-    }
     
     private func addTargets(){
         self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
@@ -73,21 +69,39 @@ public class MainVCPresenter: NSObject{
         }
     }
     @objc private func didTapTransform(){
-        guard let styleIMG = viewController?.styleImage?.image,let originalIMG = viewController?.subjectImage?.image else {return}
-        iterator.permormTransormationRequest(originalImage: styleIMG, styleImage: originalIMG) { [weak self] (data, err)  in
+        
+        guard checkForEssensialParams() else {return}
+        enableTransformButton(false)
+        iterator.permormTransormationRequest(originalImage: (viewController?.subjectImage?.image)!, styleImage: (viewController?.styleImage?.image)!) { [weak self] (data) in
             if let img = ImageManager.shared.createImageWithData(data: data){
                 ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
             }else{
-                ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: UIImage(named: "icon_app_title"))
+                ErrorMessageFactory.shared.showErrorMessage(on: self?.viewController, error: .StylingError)
             }
+            self?.enableTransformButton(true)
         }
     }
     
-    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == Constants.stringImage && viewController?.styleImage?.image != nil && viewController?.subjectImage?.image != nil{
-            viewController?.transformButton?.isEnabled = true
-        }else{
-            viewController?.transformButton?.isEnabled = false
+    private func enableTransformButton(_ enable: Bool){
+        DispatchQueue.main.async {
+            self.viewController?.transformButton?.isEnabled = enable
         }
+    }
+    
+    private func checkForEssensialParams()-> Bool{
+        
+        guard viewController?.subjectImage?.image != nil else {
+            ErrorMessageFactory.shared.showErrorMessage(on: self.viewController, error: .OriginalImageNotSet)
+            return false
+        }
+        guard viewController?.styleImage?.image != nil else {
+            ErrorMessageFactory.shared.showErrorMessage(on: self.viewController, error: .StyleImageNotSet)
+            return false
+        }
+        guard NetworkConnectionService.isConnectedToNetwork() else {
+            ErrorMessageFactory.shared.showErrorMessage(on: self.viewController, error: .NetworkConnectionError)
+            return false
+        }
+        return true
     }
 }

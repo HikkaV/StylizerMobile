@@ -40,4 +40,8 @@ public class ImageManager{
         }
         return nil
     }
+    
+    public func saveImage(image: UIImage){
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
 }
