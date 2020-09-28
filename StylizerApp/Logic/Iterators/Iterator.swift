@@ -11,13 +11,17 @@ import UIKit
 
 public class Iterator{
     
-    func permormTransormationRequest(originalImage: UIImage, styleImage: UIImage, completion :  @escaping (Data?, Error?) -> Void){
+    func permormTransormationRequest(originalImage: UIImage, styleImage: UIImage, completion :  @escaping (Data?) -> Void){
         if let data = ImageManager.shared.createDataWithImages(originalImage: originalImage, styleImage: styleImage){
-            RequestService.shared.makeRequest(data: data, url: Constants.serverAdress) { (data, err) in
-                completion(data, err)
+            RequestService.shared.makeRequest(data: data, url: Constants.serverAdress) { (data, _) in
+                if let data = data{
+                    completion(data)
+                }else{
+                    completion(nil)
+                }
             }
         }else{
-            completion(nil, nil)
+            completion(nil)
         }
        
         
