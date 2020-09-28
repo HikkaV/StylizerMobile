@@ -33,11 +33,13 @@ public class ImageDetailsPresenter: NSObject{
     }
     
     @objc private func didTapSaveButton(){
-        
+        if let img = viewController?.stylizedImage?.image{
+            ImageManager.shared.saveImage(image: img)
+        }
     }
     
     @objc private func didTapDismissButton(){
-        
+        self.viewController?.dismiss(animated: true, completion: nil)
     }
     
 }
