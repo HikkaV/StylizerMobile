@@ -50,6 +50,7 @@ extension MainViewController: MainVCPresenterViewController{
             enable ? self.transformButton?.setTitle(nil, for: .normal) : self.transformButton?.setTitle(R.string.localizable.buttonTitleTransform(), for: .normal)
             enable ? self.activityView?.startAnimating(): self.activityView?.stopAnimating()
             enable ? self.view.addSubview(self.activityView ?? UIView()) : self.activityView?.removeFromSuperview()
+            [self.originalImageView, self.styleImageView, self.placeholderForStyleImage, self.placeholderForOriginalImage].forEach({$0?.isUserInteractionEnabled = !enable})
             
         }
     }
