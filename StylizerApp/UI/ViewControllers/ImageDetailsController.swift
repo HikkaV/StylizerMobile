@@ -34,7 +34,6 @@ class ImageDetailsController: UIViewController {
         saveButton?.layer.cornerRadius = 16
         [shareButton, dismissButton].forEach({$0?.makeCircleCorners()})
         [imagePlaceHolderView, image].forEach({$0?.layer.cornerRadius = 16})
-        
     }
 }
 
@@ -55,7 +54,6 @@ extension ImageDetailsController: DetailsImagePresenterController{
     var stylizedImage: UIImageView? {
         return image
     }
-    
     
 }
 

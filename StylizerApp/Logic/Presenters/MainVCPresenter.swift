@@ -64,6 +64,7 @@ public class MainVCPresenter: NSObject{
             }
         }
     }
+    
     @objc private func didTapStyleImage(){
         self.selectImageWithPicker { [weak self] (image) in
             DispatchQueue.main.async {
@@ -71,6 +72,7 @@ public class MainVCPresenter: NSObject{
             }
         }
     }
+    
     @objc private func didTapTransform(){
         guard checkForEssentialParams() else {return}
         self.viewController?.enableLoadingView(true)
@@ -79,14 +81,13 @@ public class MainVCPresenter: NSObject{
                 ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
             }else{
                 ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: R.image.icon_launchscreen())
-                ErrorMessageFactory.shared.showErrorMessage(on: self?.viewController, error: .StylingError)
+               // ErrorMessageFactory.shared.showErrorMessage(on: self?.viewController, error: .StylingError)
             }
             self?.viewController?.enableLoadingView(false)
         }
     }
     
     private func checkForEssentialParams()-> Bool{
-        
         guard viewController?.subjectImage?.image != nil else {
             ErrorMessageFactory.shared.showErrorMessage(on: self.viewController, error: .OriginalImageNotSet)
             return false
