@@ -24,8 +24,8 @@ public class ErrorMessageFactory{
     
     func showErrorMessage(on vc: UIViewController?, error type: ErrorType){
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Warning", message: type.rawValue, preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+            let alert = UIAlertController(title: R.string.localizable.alertTitleWarning(), message: type.rawValue, preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: R.string.localizable.alertActionDismiss(), style: .cancel, handler: nil)
             alert.addAction(alertAction)
             vc?.present(alert, animated: true, completion: nil)
         }

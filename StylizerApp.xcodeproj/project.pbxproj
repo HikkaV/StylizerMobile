@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F58230415AD7AE7275786E7 /* Pods_StylizerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9923FD88F4D3A4A96AECFA4 /* Pods_StylizerAppTests.framework */; };
 		3240215225121ADF0033A583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240215125121ADF0033A583 /* AppDelegate.swift */; };
 		3240215425121ADF0033A583 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240215325121ADF0033A583 /* SceneDelegate.swift */; };
 		3240215625121ADF0033A583 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240215525121ADF0033A583 /* MainViewController.swift */; };
@@ -25,9 +26,15 @@
 		32882D90251FC1C200615EC6 /* ImageDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32882D8F251FC1C200615EC6 /* ImageDetailsController.swift */; };
 		32882D94251FC42C00615EC6 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32882D93251FC42C00615EC6 /* ImageDetailsPresenter.swift */; };
 		32882D99251FC9AE00615EC6 /* GradientTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32882D98251FC9AE00615EC6 /* GradientTool.swift */; };
+		32963CE0252E65B2005A9A11 /* UIVIew+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32963CDF252E65B2005A9A11 /* UIVIew+Corners.swift */; };
+		32963CEF252F235E005A9A11 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32963CEE252F235E005A9A11 /* R.generated.swift */; };
+		32963CF2252F23C8005A9A11 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 32963CF1252F23C8005A9A11 /* Localizable.strings */; };
+		32963CFC252F2AD5005A9A11 /* UIColor+Pink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32963CFB252F2AD5005A9A11 /* UIColor+Pink.swift */; };
+		32963CFE252F3721005A9A11 /* UIButton+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32963CFD252F3721005A9A11 /* UIButton+Corners.swift */; };
 		32F42D632514F9DB0087EC14 /* ImageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D622514F9DB0087EC14 /* ImageManger.swift */; };
 		32F42D6C2516882E0087EC14 /* ImagePickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */; };
 		32F42D6F25168E9B0087EC14 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D6E25168E9B0087EC14 /* NavigationController.swift */; };
+		687AC2C986C9E08E944E335D /* Pods_StylizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782327AD5A3C86B683ED4BCA /* Pods_StylizerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3240214E25121ADF0033A583 /* StylizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StylizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CD8D9F45A4DBA57CE08EF32 /* Pods-StylizerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StylizerAppTests.release.xcconfig"; path = "Target Support Files/Pods-StylizerAppTests/Pods-StylizerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		3240214E25121ADF0033A583 /* Stylizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stylizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3240215125121ADF0033A583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3240215325121ADF0033A583 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3240215525121ADF0033A583 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -63,9 +71,19 @@
 		32882D8F251FC1C200615EC6 /* ImageDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsController.swift; sourceTree = "<group>"; };
 		32882D93251FC42C00615EC6 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		32882D98251FC9AE00615EC6 /* GradientTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientTool.swift; sourceTree = "<group>"; };
+		32963CDF252E65B2005A9A11 /* UIVIew+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+Corners.swift"; sourceTree = "<group>"; };
+		32963CEE252F235E005A9A11 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		32963CF1252F23C8005A9A11 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		32963CFB252F2AD5005A9A11 /* UIColor+Pink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Pink.swift"; sourceTree = "<group>"; };
+		32963CFD252F3721005A9A11 /* UIButton+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Corners.swift"; sourceTree = "<group>"; };
 		32F42D622514F9DB0087EC14 /* ImageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManger.swift; sourceTree = "<group>"; };
 		32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerFactory.swift; sourceTree = "<group>"; };
 		32F42D6E25168E9B0087EC14 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		782327AD5A3C86B683ED4BCA /* Pods_StylizerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StylizerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		88BEAA0C7B68C2BD191D5AC8 /* Pods-StylizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StylizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StylizerAppTests/Pods-StylizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		976D74679D10D751038FEB76 /* Pods-StylizerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StylizerApp.debug.xcconfig"; path = "Target Support Files/Pods-StylizerApp/Pods-StylizerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		9D90EF012FFD67D5DF87FF72 /* Pods-StylizerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StylizerApp.release.xcconfig"; path = "Target Support Files/Pods-StylizerApp/Pods-StylizerApp.release.xcconfig"; sourceTree = "<group>"; };
+		F9923FD88F4D3A4A96AECFA4 /* Pods_StylizerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StylizerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687AC2C986C9E08E944E335D /* Pods_StylizerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F58230415AD7AE7275786E7 /* Pods_StylizerAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,13 +112,15 @@
 				3240215025121ADF0033A583 /* StylizerApp */,
 				3240216A25121AE20033A583 /* StylizerAppTests */,
 				3240214F25121ADF0033A583 /* Products */,
+				3312920A7E64198B49C5B5A1 /* Pods */,
+				D0AD92BADCA5FA55646B8F22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		3240214F25121ADF0033A583 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3240214E25121ADF0033A583 /* StylizerApp.app */,
+				3240214E25121ADF0033A583 /* Stylizer.app */,
 				3240216725121AE20033A583 /* StylizerAppTests.xctest */,
 			);
 			name = Products;
@@ -107,6 +129,7 @@
 		3240215025121ADF0033A583 /* StylizerApp */ = {
 			isa = PBXGroup;
 			children = (
+				32963CF0252F238B005A9A11 /* Localize */,
 				3240216225121AE20033A583 /* Info.plist */,
 				324021782512239C0033A583 /* Common */,
 				32402177251223840033A583 /* Logic */,
@@ -127,6 +150,7 @@
 		324021762512237E0033A583 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				32963CDE252E659D005A9A11 /* Extentions */,
 				32882D97251FC96900615EC6 /* Supported */,
 				32F42D6A251688070087EC14 /* Factory */,
 				326B39472514ECE80065898B /* Storyboard */,
@@ -149,6 +173,7 @@
 		324021782512239C0033A583 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				32963CEE252F235E005A9A11 /* R.generated.swift */,
 				3240215125121ADF0033A583 /* AppDelegate.swift */,
 				3240215325121ADF0033A583 /* SceneDelegate.swift */,
 				3240215D25121AE20033A583 /* Assets.xcassets */,
@@ -219,6 +244,24 @@
 			path = Supported;
 			sourceTree = "<group>";
 		};
+		32963CDE252E659D005A9A11 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				32963CDF252E65B2005A9A11 /* UIVIew+Corners.swift */,
+				32963CFB252F2AD5005A9A11 /* UIColor+Pink.swift */,
+				32963CFD252F3721005A9A11 /* UIButton+Corners.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		32963CF0252F238B005A9A11 /* Localize */ = {
+			isa = PBXGroup;
+			children = (
+				32963CF1252F23C8005A9A11 /* Localizable.strings */,
+			);
+			path = Localize;
+			sourceTree = "<group>";
+		};
 		32F42D6A251688070087EC14 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +280,26 @@
 			path = common;
 			sourceTree = "<group>";
 		};
+		3312920A7E64198B49C5B5A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				976D74679D10D751038FEB76 /* Pods-StylizerApp.debug.xcconfig */,
+				9D90EF012FFD67D5DF87FF72 /* Pods-StylizerApp.release.xcconfig */,
+				88BEAA0C7B68C2BD191D5AC8 /* Pods-StylizerAppTests.debug.xcconfig */,
+				0CD8D9F45A4DBA57CE08EF32 /* Pods-StylizerAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D0AD92BADCA5FA55646B8F22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				782327AD5A3C86B683ED4BCA /* Pods_StylizerApp.framework */,
+				F9923FD88F4D3A4A96AECFA4 /* Pods_StylizerAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,9 +307,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3240217025121AE20033A583 /* Build configuration list for PBXNativeTarget "StylizerApp" */;
 			buildPhases = (
+				85D1899166CFB6871D99C33D /* [CP] Check Pods Manifest.lock */,
+				32963CED252F2268005A9A11 /* ShellScript */,
 				3240214A25121ADF0033A583 /* Sources */,
 				3240214B25121ADF0033A583 /* Frameworks */,
 				3240214C25121ADF0033A583 /* Resources */,
+				0B237A7E95747AD4B49A4F5F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,13 +320,14 @@
 			);
 			name = StylizerApp;
 			productName = StylizerApp;
-			productReference = 3240214E25121ADF0033A583 /* StylizerApp.app */;
+			productReference = 3240214E25121ADF0033A583 /* Stylizer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3240216625121AE20033A583 /* StylizerAppTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3240217325121AE20033A583 /* Build configuration list for PBXNativeTarget "StylizerAppTests" */;
 			buildPhases = (
+				64E1F2CE763894AEA6CD0DA0 /* [CP] Check Pods Manifest.lock */,
 				3240216325121AE20033A583 /* Sources */,
 				3240216425121AE20033A583 /* Frameworks */,
 				3240216525121AE20033A583 /* Resources */,
@@ -287,6 +354,7 @@
 				TargetAttributes = {
 					3240214D25121ADF0033A583 = {
 						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
 					};
 					3240216625121AE20033A583 = {
 						CreatedOnToolsVersion = 11.6;
@@ -319,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3240216125121AE20033A583 /* LaunchScreen.storyboard in Resources */,
+				32963CF2252F23C8005A9A11 /* Localizable.strings in Resources */,
 				3240215E25121AE20033A583 /* Assets.xcassets in Resources */,
 				3240215925121ADF0033A583 /* Main.storyboard in Resources */,
 			);
@@ -333,17 +402,104 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0B237A7E95747AD4B49A4F5F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StylizerApp/Pods-StylizerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StylizerApp/Pods-StylizerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StylizerApp/Pods-StylizerApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32963CED252F2268005A9A11 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"",
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
+		64E1F2CE763894AEA6CD0DA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StylizerAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85D1899166CFB6871D99C33D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StylizerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3240214A25121ADF0033A583 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				326B39492514ED760065898B /* RequestService.swift in Sources */,
+				32963CFE252F3721005A9A11 /* UIButton+Corners.swift in Sources */,
 				32F42D6F25168E9B0087EC14 /* NavigationController.swift in Sources */,
 				32882D94251FC42C00615EC6 /* ImageDetailsPresenter.swift in Sources */,
+				32963CFC252F2AD5005A9A11 /* UIColor+Pink.swift in Sources */,
 				3240218D2512292D0033A583 /* Iterator.swift in Sources */,
 				326B394B2514EDBD0065898B /* NetworkConnectionService.swift in Sources */,
 				32F42D6C2516882E0087EC14 /* ImagePickerFactory.swift in Sources */,
+				32963CEF252F235E005A9A11 /* R.generated.swift in Sources */,
 				32402180251224320033A583 /* MainVCPresenter.swift in Sources */,
 				3240215625121ADF0033A583 /* MainViewController.swift in Sources */,
 				32882D90251FC1C200615EC6 /* ImageDetailsController.swift in Sources */,
@@ -355,6 +511,7 @@
 				326B394E2514EEBA0065898B /* Constants.swift in Sources */,
 				32F42D632514F9DB0087EC14 /* ImageManger.swift in Sources */,
 				3265CB442521158D00636672 /* ErrorMessageFactory.swift in Sources */,
+				32963CE0252E65B2005A9A11 /* UIVIew+Corners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,10 +669,12 @@
 		};
 		3240217125121AE20033A583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 976D74679D10D751038FEB76 /* Pods-StylizerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7KRPSJXNU;
+				DEVELOPMENT_TEAM = Y5BVD5UHAE;
 				INFOPLIST_FILE = StylizerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,18 +682,20 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dima.StylizerApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = Stylizer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3240217225121AE20033A583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D90EF012FFD67D5DF87FF72 /* Pods-StylizerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7KRPSJXNU;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StylizerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -542,14 +703,16 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dima.StylizerApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = Stylizer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		3240217425121AE20033A583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88BEAA0C7B68C2BD191D5AC8 /* Pods-StylizerAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +735,7 @@
 		};
 		3240217525121AE20033A583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CD8D9F45A4DBA57CE08EF32 /* Pods-StylizerAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -602,7 +766,7 @@
 				3240216F25121AE20033A583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		3240217025121AE20033A583 /* Build configuration list for PBXNativeTarget "StylizerApp" */ = {
 			isa = XCConfigurationList;
@@ -611,7 +775,7 @@
 				3240217225121AE20033A583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		3240217325121AE20033A583 /* Build configuration list for PBXNativeTarget "StylizerAppTests" */ = {
 			isa = XCConfigurationList;
@@ -620,7 +784,7 @@
 				3240217525121AE20033A583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

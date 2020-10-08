@@ -12,7 +12,7 @@ import UIKit
 public class ImagePickerFactory: NSObject, UINavigationControllerDelegate{
 
     var picker = UIImagePickerController();
-    var alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
+    var alert = UIAlertController(title: R.string.localizable.alertTitleChoose_Image(), message: nil, preferredStyle: .actionSheet)
     var viewController: UIViewController?
     var pickImageCallback : ((UIImage) -> ())?;
 
@@ -24,15 +24,15 @@ public class ImagePickerFactory: NSObject, UINavigationControllerDelegate{
         pickImageCallback = callback;
         self.viewController = viewController;
 
-        let cameraAction = UIAlertAction(title: "Camera", style: .default){
+        let cameraAction = UIAlertAction(title: R.string.localizable.alertActionCamera(), style: .default){
             UIAlertAction in
             self.openCamera()
         }
-        let galleryAction = UIAlertAction(title: "Gallery", style: .default){
+        let galleryAction = UIAlertAction(title: R.string.localizable.alertActionGalery(), style: .default){
             UIAlertAction in
             self.openGallery()
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){
+        let cancelAction = UIAlertAction(title: R.string.localizable.alertActionCancel(), style: .cancel){
             UIAlertAction in
         }
 
@@ -49,8 +49,8 @@ public class ImagePickerFactory: NSObject, UINavigationControllerDelegate{
             picker.sourceType = .camera
             self.viewController?.present(picker, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            let alertController = UIAlertController(title: R.string.localizable.alertTitleWarning(), message: R.string.localizable.alertMessageNo_Camera(), preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: R.string.localizable.alertActionCancel(), style: .cancel, handler: nil))
             self.viewController?.present(alertController, animated: true)
         }
     }

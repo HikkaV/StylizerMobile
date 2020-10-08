@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
 
 public protocol MainVCPresenterViewController where Self: UIViewController {
     var styleImage : UIImageView? {get}
@@ -15,6 +16,7 @@ public protocol MainVCPresenterViewController where Self: UIViewController {
     var transformButton: UIButton? {get}
     var placeholderForOriginalImage: UIImageView?{get}
     var placeholderForStyleImage:UIImageView?{get}
+    func enableLoadingView(_ enable: Bool)
 }
 
 public class MainVCPresenter: NSObject{
@@ -36,7 +38,6 @@ public class MainVCPresenter: NSObject{
         addTargets()
     }
     
-    
     private func addTargets(){
         self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
         self.viewController?.styleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
@@ -48,8 +49,10 @@ public class MainVCPresenter: NSObject{
     
     private func selectImageWithPicker(completion: @escaping (UIImage) -> Void){
         if let vc = self.viewController{
-            ImagePickerFactory().pickImage(vc) { (image) in
-                completion(image)
+            DispatchQueue.main.async {
+                ImagePickerFactory().pickImage(vc) { (image) in
+                    completion(image)
+                }
             }
         }
     }
@@ -69,26 +72,20 @@ public class MainVCPresenter: NSObject{
         }
     }
     @objc private func didTapTransform(){
-        
-        guard checkForEssensialParams() else {return}
-        enableTransformButton(false)
+        guard checkForEssentialParams() else {return}
+        self.viewController?.enableLoadingView(true)
         iterator.permormTransormationRequest(originalImage: (viewController?.subjectImage?.image)!, styleImage: (viewController?.styleImage?.image)!) { [weak self] (data) in
             if let img = ImageManager.shared.createImageWithData(data: data){
                 ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
             }else{
+                ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: R.image.icon_launchscreen())
                 ErrorMessageFactory.shared.showErrorMessage(on: self?.viewController, error: .StylingError)
             }
-            self?.enableTransformButton(true)
+            self?.viewController?.enableLoadingView(false)
         }
     }
     
-    private func enableTransformButton(_ enable: Bool){
-        DispatchQueue.main.async {
-            self.viewController?.transformButton?.isEnabled = enable
-        }
-    }
-    
-    private func checkForEssensialParams()-> Bool{
+    private func checkForEssentialParams()-> Bool{
         
         guard viewController?.subjectImage?.image != nil else {
             ErrorMessageFactory.shared.showErrorMessage(on: self.viewController, error: .OriginalImageNotSet)

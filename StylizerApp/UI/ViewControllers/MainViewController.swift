@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class MainViewController: UIViewController {
 
@@ -18,12 +19,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var stylePlaceHolderView: UIImageView?
     
     var presenter: MainVCPresenter?
+    var activityView: NVActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initPresenter()
         configUI()
-       
+        activityView = NVActivityIndicatorView(frame: buttonTransform?.frame ?? CGRect.zero, type: .ballSpinFadeLoader, color: .appPink, padding: nil)
     }
     
     private func initPresenter(){
@@ -32,15 +34,25 @@ class MainViewController: UIViewController {
     }
     
     private func configUI(){
-        originalImageView?.layer.cornerRadius = 32
-        styleImageView?.layer.cornerRadius = 32
+        [styleImageView, originalImageView].forEach({$0?.roundCorners([.topLeft, .topRight], radius: 32)})
         buttonTransform?.layer.cornerRadius = 16
+        buttonTransform?.setTitle(R.string.localizable.buttonTitleTransform(), for: .normal)
         GradientTool.createGradientOnView(view: self.view.superview ?? self.view)
         
     }
 
 }
 extension MainViewController: MainVCPresenterViewController{
+    
+    func enableLoadingView(_ enable: Bool) {
+        DispatchQueue.main.async {
+            self.transformButton?.isEnabled = !enable
+            enable ? self.transformButton?.setTitle(nil, for: .normal) : self.transformButton?.setTitle(R.string.localizable.buttonTitleTransform(), for: .normal)
+            enable ? self.activityView?.startAnimating(): self.activityView?.stopAnimating()
+            enable ? self.view.addSubview(self.activityView ?? UIView()) : self.activityView?.removeFromSuperview()
+            
+        }
+    }
     
     var placeholderForOriginalImage: UIImageView? {
         return originalPlaceHolderView

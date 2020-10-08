@@ -13,6 +13,7 @@ public protocol DetailsImagePresenterController where Self: UIViewController{
     var buttonSave: UIButton?{get}
     var buttonDismiss: UIButton?{get}
     var stylizedImage: UIImageView?{get}
+    var buttonShare: UIButton?{get}
 }
 
 public class ImageDetailsPresenter: NSObject{
@@ -28,13 +29,24 @@ public class ImageDetailsPresenter: NSObject{
     }
     
     private func addTargets(){
-        viewController?.buttonDismiss?.addTarget(self, action: #selector(ImageDetailsPresenter.didTapSaveButton), for: .touchUpInside)
+        viewController?.buttonDismiss?.addTarget(self, action: #selector(ImageDetailsPresenter.didTapDismissButton), for: .touchUpInside)
         viewController?.buttonSave?.addTarget(self, action: #selector(ImageDetailsPresenter.didTapSaveButton), for: .touchUpInside)
+        viewController?.buttonShare?.addTarget(self, action: #selector(ImageDetailsPresenter.didTapShareButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapShareButton(){
+        if let img = viewController?.stylizedImage?.image{
+            DispatchQueue.main.async {
+                ImageManager.shared.presentImageSharingOnVC(image: img, vc: self.viewController)
+            }
+        }
     }
     
     @objc private func didTapSaveButton(){
         if let img = viewController?.stylizedImage?.image{
-            ImageManager.shared.saveImage(image: img)
+            DispatchQueue.main.async {
+                ImageManager.shared.saveImage(image: img)
+            }
         }
     }
     

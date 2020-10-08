@@ -16,8 +16,8 @@ public class ImageDetailedFactory {
     
     func presentImageDetailedController(on vc: UIViewController?, with image: UIImage?){
         DispatchQueue.main.async {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            if let viewController = sb.instantiateViewController(withIdentifier: "ImageDetailsController") as? ImageDetailsController{
+            let sb = R.storyboard.main()
+            if let viewController = sb.instantiateViewController(withIdentifier: R.storyboard.main.imageDetailsController.identifier) as? ImageDetailsController{
                 
                 vc?.present(viewController, animated: true, completion: {
                     viewController.image?.image = image

@@ -20,9 +20,6 @@ public class ImageManager{
         
         let originalImageData = originalImage.pngData()?.base64EncodedString()
         let styleImageData = styleImage.pngData()?.base64EncodedString()
-    //    let originalImageData = UIImage(named: "orig")!.pngData()?.base64EncodedString()
-     //   let styleImageData = UIImage(named: "style")!.pngData()?.base64EncodedString()
-        
         let dict = [Constants.keyOriginalImage : originalImageData, Constants.keyStyleImage: styleImageData]
         if let data = try? JSONSerialization.data(withJSONObject: dict, options: []){
             return data
@@ -43,5 +40,11 @@ public class ImageManager{
     
     public func saveImage(image: UIImage){
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
+    
+    public func presentImageSharingOnVC(image: UIImage, vc: UIViewController?){
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = vc?.view
+        vc?.present(activityViewController, animated: true, completion: nil)
     }
 }

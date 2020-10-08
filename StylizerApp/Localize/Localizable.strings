@@ -1,0 +1,18 @@
+
+"Button.Title.Transform"    = "Transform";
+
+"Alert.Title.Choose_Image"  = "Choose Image";
+"Alert.Title.Warning"       = "Warning";
+"Alert.Title.Cancel"        = "Cancel";
+
+"Alert.Action.Camera"       = "Camera";
+"Alert.Action.Galery"       = "Galery";
+"Alert.Action.Cancel"       = "Cancel";
+"Alert.Action.Dismiss"      = "Dismiss";
+
+"Alert.Message.No_Camera"   = "You don't have camera";
+
+"Error.Message.ChooseStyleImage"      = "Please choose style image!";
+"Error.Message.ChooseOriginalImage"   = "Please choose original image!";
+"Error.Message.NoNetwork"              = "You are not connected to network!";
+"Error.Message.FailedToStyle"         = "Failed to stylize your image!";

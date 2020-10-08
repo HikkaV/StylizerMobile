@@ -28,8 +28,6 @@ extension errors : LocalizedError{
             return NSLocalizedString("server Error", comment: "server Error")
         case .noDataToSend:
             return NSLocalizedString("no data to send", comment: "no data to send Error")
-        default:
-            return NSLocalizedString("Unknown Error", comment: "Unknown Error")
         }
     }
 }
