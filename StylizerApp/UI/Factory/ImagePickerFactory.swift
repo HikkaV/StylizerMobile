@@ -35,7 +35,7 @@ public class ImagePickerFactory: NSObject, UINavigationControllerDelegate{
         let cancelAction = UIAlertAction(title: R.string.localizable.alertActionCancel(), style: .cancel){
             UIAlertAction in
         }
-
+        
         picker.delegate = self
         alert.addAction(cameraAction)
         alert.addAction(galleryAction)
@@ -44,20 +44,24 @@ public class ImagePickerFactory: NSObject, UINavigationControllerDelegate{
         viewController.present(alert, animated: true, completion: nil)
     }
     func openCamera(){
-        alert.dismiss(animated: true, completion: nil)
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
-            picker.sourceType = .camera
-            self.viewController?.present(picker, animated: true, completion: nil)
-        } else {
-            let alertController = UIAlertController(title: R.string.localizable.alertTitleWarning(), message: R.string.localizable.alertMessageNo_Camera(), preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: R.string.localizable.alertActionCancel(), style: .cancel, handler: nil))
-            self.viewController?.present(alertController, animated: true)
+        DispatchQueue.main.async {
+            self.alert.dismiss(animated: true, completion: nil)
+            if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+                self.picker.sourceType = .camera
+                self.viewController?.present(self.picker, animated: true, completion: nil)
+            } else {
+                let alertController = UIAlertController(title: R.string.localizable.alertTitleWarning(), message: R.string.localizable.alertMessageNo_Camera(), preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: R.string.localizable.alertActionCancel(), style: .cancel, handler: nil))
+                self.viewController?.present(alertController, animated: true)
+            }
         }
     }
     func openGallery(){
-        alert.dismiss(animated: true, completion: nil)
-        picker.sourceType = .photoLibrary
-        self.viewController!.present(picker, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.alert.dismiss(animated: true, completion: nil)
+            self.picker.sourceType = .photoLibrary
+            self.viewController!.present(self.picker, animated: true, completion: nil)
+        }
     }
 
 
@@ -75,9 +79,7 @@ extension ImagePickerFactory : UIImagePickerControllerDelegate{
             picker.dismiss(animated: true, completion: nil)
             return
         }
-        
         pickImageCallback?(image)
         picker.dismiss(animated: true, completion: nil)
-        
     }
 }
