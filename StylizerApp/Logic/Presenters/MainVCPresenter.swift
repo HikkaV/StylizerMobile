@@ -14,8 +14,8 @@ public protocol MainVCPresenterViewController where Self: UIViewController {
     var styleImage : UIImageView? {get}
     var subjectImage : UIImageView? {get}
     var transformButton: UIButton? {get}
-    var placeholderForOriginalImage: UIImageView?{get}
-    var placeholderForStyleImage:UIImageView?{get}
+    var placeholderForOriginalImage: UIView?{get}
+    var placeholderForStyleImage:UIView?{get}
     func enableLoadingView(_ enable: Bool)
 }
 
@@ -39,8 +39,8 @@ public class MainVCPresenter: NSObject{
     }
     
     private func addTargets(){
-        self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
-        self.viewController?.styleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
+      //  self.viewController?.subjectImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
+    //    self.viewController?.styleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
         self.viewController?.transformButton?.addTarget(self, action: #selector(MainVCPresenter.didTapTransform), for: .touchUpInside)
         self.viewController?.placeholderForOriginalImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapSubjectImage)))
         self.viewController?.placeholderForStyleImage?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MainVCPresenter.didTapStyleImage)))
@@ -49,10 +49,9 @@ public class MainVCPresenter: NSObject{
     
     private func selectImageWithPicker(completion: @escaping (UIImage) -> Void){
         if let vc = self.viewController{
-            DispatchQueue.main.async {
-                ImagePickerFactory().pickImage(vc) { (image) in
-                    completion(image)
-                }
+            ImagePickerFactory().pickImage(vc) { (image) in
+                completion(image)
+                
             }
         }
     }
@@ -75,15 +74,17 @@ public class MainVCPresenter: NSObject{
     
     @objc private func didTapTransform(){
         guard checkForEssentialParams() else {return}
-        self.viewController?.enableLoadingView(true)
-        iterator.permormTransormationRequest(originalImage: (viewController?.subjectImage?.image)!, styleImage: (viewController?.styleImage?.image)!) { [weak self] (data) in
-            if let img = ImageManager.shared.createImageWithData(data: data){
-                ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
-            }else{
-                ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: R.image.icon_launchscreen())
-               // ErrorMessageFactory.shared.showErrorMessage(on: self?.viewController, error: .StylingError)
+        DispatchQueue.main.async {
+            self.viewController?.enableLoadingView(true)
+            self.iterator.permormTransormationRequest(originalImage: (self.viewController?.subjectImage?.image)!, styleImage: (self.viewController?.styleImage?.image)!) { [weak self] (data) in
+                if let img = ImageManager.shared.createImageWithData(data: data){
+                    ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
+                }else{
+                    // ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: R.image.icon_launchscreen())
+                   ErrorMessageFactory.shared.showErrorMessage(on: self?.viewController, error: .StylingError)
+                }
+                self?.viewController?.enableLoadingView(false)
             }
-            self?.viewController?.enableLoadingView(false)
         }
     }
     

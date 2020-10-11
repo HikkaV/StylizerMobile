@@ -15,8 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var styleImageView: UIImageView?
     @IBOutlet weak var buttonTransform: UIButton?
     
-    @IBOutlet weak var originalPlaceHolderView: UIImageView?
-    @IBOutlet weak var stylePlaceHolderView: UIImageView?
+    @IBOutlet weak var originalPlaceHolderView: UIView?
+    @IBOutlet weak var stylePlaceHolderView: UIView?
     
     var presenter: MainVCPresenter?
     var activityView: NVActivityIndicatorView?
@@ -25,7 +25,10 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         initPresenter()
         configUI()
-        activityView = NVActivityIndicatorView(frame: buttonTransform?.frame ?? CGRect.zero, type: .ballSpinFadeLoader, color: .appPink, padding: nil)
+        
+    }
+    override func viewDidLayoutSubviews() {
+        activityView?.center = buttonTransform?.center ?? CGPoint.zero
     }
     
     private func initPresenter(){
@@ -34,11 +37,11 @@ class MainViewController: UIViewController {
     }
     
     private func configUI(){
-        [styleImageView, originalImageView].forEach({$0?.roundCorners([.topLeft, .topRight], radius: 32)})
+        [styleImageView, originalImageView].forEach({$0?.roundCorners([.layerMaxXMinYCorner, .layerMinXMinYCorner], radius: 32)})
         buttonTransform?.layer.cornerRadius = 16
         buttonTransform?.setTitle(R.string.localizable.buttonTitleTransform(), for: .normal)
         GradientTool.createGradientOnView(view: self.view.superview ?? self.view)
-        
+        activityView = NVActivityIndicatorView(frame: transformButton?.frame ?? CGRect.zero, type: .ballSpinFadeLoader, color: .appPink, padding: nil)
     }
 
 }
@@ -51,15 +54,14 @@ extension MainViewController: MainVCPresenterViewController{
             enable ? self.activityView?.startAnimating(): self.activityView?.stopAnimating()
             enable ? self.view.addSubview(self.activityView ?? UIView()) : self.activityView?.removeFromSuperview()
             [self.originalImageView, self.styleImageView, self.placeholderForStyleImage, self.placeholderForOriginalImage].forEach({$0?.isUserInteractionEnabled = !enable})
-            
         }
     }
     
-    var placeholderForOriginalImage: UIImageView? {
+    var placeholderForOriginalImage: UIView? {
         return originalPlaceHolderView
     }
     
-    var placeholderForStyleImage: UIImageView? {
+    var placeholderForStyleImage: UIView? {
         return stylePlaceHolderView
     }
     
