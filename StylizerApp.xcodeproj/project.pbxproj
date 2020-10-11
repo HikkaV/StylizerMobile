@@ -18,6 +18,7 @@
 		3240216C25121AE20033A583 /* StylizerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240216B25121AE20033A583 /* StylizerAppTests.swift */; };
 		32402180251224320033A583 /* MainVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240217F251224320033A583 /* MainVCPresenter.swift */; };
 		3240218D2512292D0033A583 /* Iterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3240218C2512292D0033A583 /* Iterator.swift */; };
+		324533F52532EBA3005B9553 /* UIImage+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324533F42532EBA3005B9553 /* UIImage+size.swift */; };
 		3265CB4125209C7100636672 /* ImageDetailedFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265CB4025209C7100636672 /* ImageDetailedFactory.swift */; };
 		3265CB442521158D00636672 /* ErrorMessageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265CB432521158D00636672 /* ErrorMessageFactory.swift */; };
 		326B39492514ED760065898B /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B39482514ED760065898B /* RequestService.swift */; };
@@ -63,6 +64,7 @@
 		3240216D25121AE20033A583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3240217F251224320033A583 /* MainVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCPresenter.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		3240218C2512292D0033A583 /* Iterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iterator.swift; sourceTree = "<group>"; };
+		324533F42532EBA3005B9553 /* UIImage+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+size.swift"; sourceTree = "<group>"; };
 		3265CB4025209C7100636672 /* ImageDetailedFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailedFactory.swift; sourceTree = "<group>"; };
 		3265CB432521158D00636672 /* ErrorMessageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessageFactory.swift; sourceTree = "<group>"; };
 		326B39482514ED760065898B /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				32963CDF252E65B2005A9A11 /* UIVIew+Corners.swift */,
 				32963CFB252F2AD5005A9A11 /* UIColor+Pink.swift */,
 				32963CFD252F3721005A9A11 /* UIButton+Corners.swift */,
+				324533F42532EBA3005B9553 /* UIImage+size.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				32882D90251FC1C200615EC6 /* ImageDetailsController.swift in Sources */,
 				3240215225121ADF0033A583 /* AppDelegate.swift in Sources */,
 				32882D99251FC9AE00615EC6 /* GradientTool.swift in Sources */,
+				324533F52532EBA3005B9553 /* UIImage+size.swift in Sources */,
 				3240215425121ADF0033A583 /* SceneDelegate.swift in Sources */,
 				3265CB4125209C7100636672 /* ImageDetailedFactory.swift in Sources */,
 				3240215C25121ADF0033A583 /* StylizerApp.xcdatamodeld in Sources */,
