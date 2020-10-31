@@ -74,9 +74,9 @@ public class MainVCPresenter: NSObject{
     
     @objc private func didTapTransform(){
         guard checkForEssentialParams() else {return}
-        DispatchQueue.main.async {
-            self.viewController?.enableLoadingView(true)
-            self.iterator.permormTransormationRequest(originalImage: (self.viewController?.subjectImage?.image)!, styleImage: (self.viewController?.styleImage?.image)!) { [weak self] (data) in
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController?.enableLoadingView(true)
+            self?.iterator.permormTransormationRequest(originalImage: (self?.viewController?.subjectImage?.image)!, styleImage: (self?.viewController?.styleImage?.image)!) {(data) in
                 if let img = ImageManager.shared.createImageWithData(data: data){
                     ImageDetailedFactory.shared.presentImageDetailedController(on: self?.viewController, with: img)
                 }else{

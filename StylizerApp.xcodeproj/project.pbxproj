@@ -34,7 +34,6 @@
 		32963CFE252F3721005A9A11 /* UIButton+Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32963CFD252F3721005A9A11 /* UIButton+Corners.swift */; };
 		32F42D632514F9DB0087EC14 /* ImageManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D622514F9DB0087EC14 /* ImageManger.swift */; };
 		32F42D6C2516882E0087EC14 /* ImagePickerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */; };
-		32F42D6F25168E9B0087EC14 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F42D6E25168E9B0087EC14 /* NavigationController.swift */; };
 		687AC2C986C9E08E944E335D /* Pods_StylizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782327AD5A3C86B683ED4BCA /* Pods_StylizerApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +79,6 @@
 		32963CFD252F3721005A9A11 /* UIButton+Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Corners.swift"; sourceTree = "<group>"; };
 		32F42D622514F9DB0087EC14 /* ImageManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManger.swift; sourceTree = "<group>"; };
 		32F42D6B2516882E0087EC14 /* ImagePickerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerFactory.swift; sourceTree = "<group>"; };
-		32F42D6E25168E9B0087EC14 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		782327AD5A3C86B683ED4BCA /* Pods_StylizerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StylizerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88BEAA0C7B68C2BD191D5AC8 /* Pods-StylizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StylizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-StylizerAppTests/Pods-StylizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		976D74679D10D751038FEB76 /* Pods-StylizerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StylizerApp.debug.xcconfig"; path = "Target Support Files/Pods-StylizerApp/Pods-StylizerApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -278,7 +276,6 @@
 		32F42D6D25168E840087EC14 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				32F42D6E25168E9B0087EC14 /* NavigationController.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -496,7 +493,6 @@
 			files = (
 				326B39492514ED760065898B /* RequestService.swift in Sources */,
 				32963CFE252F3721005A9A11 /* UIButton+Corners.swift in Sources */,
-				32F42D6F25168E9B0087EC14 /* NavigationController.swift in Sources */,
 				32882D94251FC42C00615EC6 /* ImageDetailsPresenter.swift in Sources */,
 				32963CFC252F2AD5005A9A11 /* UIColor+Pink.swift in Sources */,
 				3240218D2512292D0033A583 /* Iterator.swift in Sources */,
@@ -607,7 +603,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -661,7 +657,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -678,14 +674,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7KRPSJXNU;
+				DEVELOPMENT_TEAM = Y5BVD5UHAE;
 				INFOPLIST_FILE = StylizerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dima.StylizerApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dimas.StylizerApp;
 				PRODUCT_NAME = Stylizer;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -701,7 +697,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = StylizerApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
